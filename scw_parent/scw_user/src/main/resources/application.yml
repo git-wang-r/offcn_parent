@@ -1,0 +1,39 @@
+server:
+  port: 7000
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+  datasource:
+    username: root
+    password: riit
+    url: jdbc:mysql://localhost:3306/fyzc?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver #jdbc里面的一个东西
+    type: com.alibaba.druid.pool.DruidDataSource #配置连接池
+    filters: stat  #开启监控过滤器
+  application:
+    name: SCW-USER
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+
+  mapper-locations: classpath:com/offcn/user/mapper/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+logging:
+  file:
+    path: d:\idea
+  level:
+    com:
+      offcn: debug
+
+sms:
+  host: http://dingxin.market.alicloudapi.com
+  path: /dx/sendSms
+  method: POST
+  appcode: c2cf98770e0c4332b5cc4b6745aaff8d  #修改为自己的appcode
+

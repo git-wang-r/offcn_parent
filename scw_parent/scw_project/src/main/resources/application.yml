@@ -1,0 +1,32 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    username: root
+    password: riit
+    url: jdbc:mysql://localhost:3306/fyzc?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: SCW-PROJECT
+  redis:
+    host: localhost
+    port: 6379
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:com/offcn/project/mapper/*.xml #这个是加载 xmlwe文件的地方
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    appname: SCW-PROJECT
+    prefer-ip-address: true
+
+oss:
+  endpoint: http://oss-cn-beijing.aliyuncs.com
+  bucketDomain: qyzc20200924wz.oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI4G9b8ovQcW7t5FJnxVgr
+  accessKeySecret: obW47TPd8tvX1sCly8nOCmTElsAefF
+  bucketName: qyzc20200924wz

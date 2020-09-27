@@ -1,0 +1,24 @@
+server:
+  port: 9000
+spring:
+  datasource:
+    username: root
+    password: riit
+    url: jdbc:mysql://localhost:3306/fyzc?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=UTF-88
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: localhost
+    port: 6379
+  application:
+    name: SCW-ORDER
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:com/offcn/order/mapper/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    appname: SCW-ORDER
+    prefer-ip-address: true
